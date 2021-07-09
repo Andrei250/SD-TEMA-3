@@ -1,0 +1,259 @@
+#!/bin/bash
+
+make build &> /dev/null
+
+j=0
+printf "=============== Task 1 ===============\n"
+for i in ./teste_p1/in/*.in
+do 
+	j=$((j+1))
+	cat $i > schimbare.in
+	echo $i
+	#./p1
+	time ./p1
+	#valgrind --tool=memcheck --error-exitcode=1 --leak-check=full ./p1 &> /dev/null
+	vg=$?
+	diff ./teste_p1/ref/schimbare${j}.ref ./schimbare.out &> /dev/null
+	op=$?
+	printf "\tTestul ${j} output: "
+	if [ $op -eq 0 ]
+	then
+		echo "PASS"
+	else
+		echo "FAILED"
+	fi
+	
+	printf "\tTestul ${j} valgrind: "
+	if [ $vg -eq 0 ]
+	then
+		echo "PASS"
+	else
+		echo "FAILED"
+	fi
+done
+
+j=0
+printf "=============== Task 2 ===============\n"
+for i in ./teste_p2/in/*.in
+do 
+	j=$((j+1))
+	cat $i > reprezentanti.in
+	echo $i
+	#./p2
+	time ./p2
+	#valgrind --tool=memcheck --error-exitcode=1 --leak-check=full ./p2 &> /dev/null
+	vg=$?
+	diff ./teste_p2/ref/reprezentanti${j}.ref ./reprezentanti.out &> /dev/null
+	op=$?
+	printf "\tTestul ${j} output: "
+	if [ $op -eq 0 ]
+	then
+		echo "PASS"
+	else
+		echo "FAILED"
+	fi
+	
+	printf "\tTestul ${j} valgrind: "
+	if [ $vg -eq 0 ]
+	then
+		echo "PASS"
+	else
+		echo "FAILED"
+	fi
+done
+
+j=0
+printf "=============== Task 3 ===============\n"
+for i in ./teste_p3/in/*.in
+do 
+	j=$((j+1))
+	cat $i > drumuri.in
+	echo $i
+	#./p3
+	time ./p3
+	#valgrind --tool=memcheck --error-exitcode=1 --leak-check=full ./p3 &> /dev/null
+	vg=$?
+	diff ./teste_p3/ref/drumuri${j}.ref ./drumuri.out &> /dev/null
+	op=$?
+	printf "\tTestul ${j} output: "
+	if [ $op -eq 0 ]
+	then
+		echo "PASS"
+	else
+		echo "FAILED"
+	fi
+	
+	printf "\tTestul ${j} valgrind: "
+	if [ $vg -eq 0 ]
+	then
+		echo "PASS"
+	else
+		echo "FAILED"
+	fi
+done
+
+j=0
+printf "=============== Task 4 ===============\n"
+for i in ./teste_p4/in/*.in
+do 
+	j=$((j+1))
+	cat $i > labirint.in
+	echo $i
+	time ./p4
+	#valgrind --tool=memcheck --error-exitcode=1 --leak-check=full ./p4 &> /dev/null
+	#./p4
+	vg=$?
+	diff ./teste_p4/ref/labirint${j}.ref ./labirint.out &> /dev/null
+	op=$?
+	printf "\tTestul ${j} output: "
+	if [ $op -eq 0 ]
+	then
+		echo "PASS"
+	else
+		echo "FAILED"
+	fi
+	
+	printf "\tTestul ${j} valgrind: "
+	if [ $vg -eq 0 ]
+	then
+		echo "PASS"
+	else
+		echo "FAILED"
+	fi
+done
+
+j=0
+printf "=============== Task 4 ===============\n"
+for i in ./teste_bonus/in/*.in
+do 
+	j=$((j+1))
+	cat $i > bonus.in
+	echo $i
+	#./bonus
+	time ./bonus
+	#valgrind --tool=memcheck --error-exitcode=1 --leak-check=full ./bonus &> /dev/null
+	vg=$?
+	diff ./teste_bonus/ref/bonus${j}.ref ./bonus.out &> /dev/null
+	op=$?
+	printf "\tTestul ${j} output: "
+	if [ $op -eq 0 ]
+	then
+		echo "PASS"
+	else
+		echo "FAILED"
+	fi
+	
+	printf "\tTestul ${j} valgrind: "
+	if [ $vg -eq 0 ]
+	then
+		echo "PASS"
+	else
+		echo "FAILED"
+	fi
+done
+# j=0
+# mkdir ./task02/out &> /dev/null
+# printf "\n=============== Task 2 ===============\n"
+# for i in ./task02/in/*.in
+# do 
+# 	j=$((j+1))
+# 	valgrind --tool=memcheck --error-exitcode=1 --leak-check=full ./minimax -c2 $i "./task02/out/test${j}.out" &> /dev/null
+# 	vg=$?
+# 	diff ./task02/ref/test${j}.out ./task02/out/test${j}.out &> /dev/null
+# 	op=$?
+# 	printf "\tTestul ${j} output: "
+# 	if [ $op -eq 0 ]
+# 	then
+# 		echo "PASS"
+# 	else
+# 		echo "FAILED"
+# 	fi
+	
+# 	printf "\tTestul ${j} valgrind: "
+# 	if [ $vg -eq 0 ]
+# 	then
+# 		echo "PASS"
+# 	else
+# 		echo "FAILED"
+# 	fi
+# done
+
+# j=0
+# mkdir ./task03/out &> /dev/null
+# printf "\n=============== Task 3 ===============\n"
+# for i in ./task03/in/*.in
+# do 
+# 	j=$((j+1))
+# 	valgrind --tool=memcheck --error-exitcode=1 --leak-check=full ./minimax -c3 $i "./task03/out/test${j}.out" &> /dev/null
+# 	vg=$?
+# 	diff ./task03/ref/test${j}.out ./task03/out/test${j}.out &> /dev/null
+# 	op=$?
+# 	printf "\tTestul ${j} output: "
+# 	if [ $op -eq 0 ]
+# 	then
+# 		echo "PASS"
+# 	else
+# 		echo "FAILED"
+# 	fi
+	
+# 	printf "\tTestul ${j} valgrind: "
+# 	if [ $vg -eq 0 ]
+# 	then
+# 		echo "PASS"
+# 	else
+# 		echo "FAILED"
+# 	fi
+# done
+
+# j=0
+# mkdir ./bonus/out &> /dev/null
+# printf "\n=============== Task 4 ===============\n"
+# for i in ./bonus/in/*.in
+# do 
+# 	j=$((j+1))
+# 	valgrind --tool=memcheck --error-exitcode=1 --leak-check=full ./minimax -b $i "./bonus/out/bonus${j}.out" &> /dev/null
+# 	vg=$?
+# 	diff ./bonus/ref/bonus${j}.out ./bonus/out/bonus${j}.out &> /dev/null
+# 	op=$?
+# 	printf "\tTestul ${j} output: "
+# 	if [ $op -eq 0 ]
+# 	then
+# 		echo "PASS"
+# 	else
+# 		echo "FAILED"
+# 	fi
+	
+# 	printf "\tTestul ${j} valgrind: "
+# 	if [ $vg -eq 0 ]
+# 	then
+# 		echo "PASS"
+# 	else
+# 		echo "FAILED"
+# 	fi
+# done
+
+
+printf "=============== STYLE ================"
+
+./style.pl --ignore SPDX_LICENSE_TAG,NEW_TYPEDEFS,CONST_STRUCT --no-tree --terse -f *.c *.h > styleErrors.txt # changed name from checkpatch.pl to avoid confusion with check.sh
+
+if [ $? -eq 0 ]; then
+    printf "\nChecking for coding style ............ OK\n"
+    style_points=0
+    ((total_points=total_points+0))
+else
+    style_points=-10
+    ((total_points=total_points-10))
+    printf "\nChecking for coding style ............ FAILED \n"
+fi
+
+echo ""
+echo "======================================"
+echo ""
+
+
+make clean &> /dev/null
+rm -r ./task01/out
+rm -r ./task02/out
+rm -r ./task03/out
+rm -r ./bonus/out

@@ -1,0 +1,30 @@
+bonus.c:193: WARNING: line over 80 characters
+total: 0 errors, 1 warnings, 238 lines checked
+p1.c:18: WARNING: line over 80 characters
+p1.c:37: WARNING: line over 80 characters
+p1.c:38: WARNING: line over 80 characters
+p1.c:109: WARNING: line over 80 characters
+p1.c:136: WARNING: line over 80 characters
+p1.c:137: WARNING: line over 80 characters
+p1.c:151: WARNING: line over 80 characters
+p1.c:152: WARNING: line over 80 characters
+p1.c:153: WARNING: line over 80 characters
+p1.c:155: WARNING: line over 80 characters
+p1.c:159: WARNING: line over 80 characters
+p1.c:160: WARNING: line over 80 characters
+p1.c:229: WARNING: line over 80 characters
+p1.c:243: WARNING: line over 80 characters
+p1.c:257: WARNING: line over 80 characters
+total: 0 errors, 15 warnings, 279 lines checked
+p2.c:85: WARNING: line over 80 characters
+p2.c:87: WARNING: line over 80 characters
+p2.c:184: WARNING: line over 80 characters
+total: 0 errors, 3 warnings, 201 lines checked
+p3.c:93: WARNING: line over 80 characters
+p3.c:96: WARNING: line over 80 characters
+p3.c:98: WARNING: line over 80 characters
+p3.c:99: WARNING: line over 80 characters
+p3.c:101: WARNING: line over 80 characters
+total: 0 errors, 5 warnings, 245 lines checked
+p4.c:50: WARNING: line over 80 characters
+total: 0 errors, 1 warnings, 125 lines checked
